@@ -1,0 +1,45 @@
+.header_content{
+    display: inline-block;
+}
+a.header_content{
+    margin-left: 800px;
+}
+
+.your_trips_div{
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.td{
+    margin-left: 15px;
+}
+
+.other_div{
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+
+.add_plan{
+    margin-left: 870px;
+}
+
+.add_header_div{
+    margin-left: 800px;
+}
+
+.logout{
+    margin-left:20px;
+}
+
+.destination_content{
+    list-style-type:none;
+}
+
+.destination_div{
+    margin-left: 25px;
+}
+
+.other_users_div{
+    margin-left: 25px;
+}

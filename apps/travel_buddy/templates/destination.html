@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% load static %}
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}" media="screen" title="no title"  charset="utf-8">
+        <script type="text/javascript" src='http://code.jquery.com/jquery-1.10.2.min.js'></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+        <script src=" https://code.jquery.com/jquery-3.2.1.slim.min.js "></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js ">
+        </script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js">
+        </script>    
+    </head>
+    <body>
+        <div class="add_header_div">
+            <a href="{% url 'travels' %}">Home</a>
+            <a href="{% url 'logout' %}" class="logout">Logout</a>
+        </div>
+
+        <div class="destination_div">
+            <h3>{{trip.destination}}</h3>
+            <ul class="destination_content">
+                <li>Planned By: {{trip.user.name}}</li>
+                <li>Description: {{trip.desc}}</li>
+                <li>Travel Date From: {{trip.departure_date}}</li>
+                <li>Travel Date To: {{trip.return_date}}</li>
+            <ul>
+        </div>
+
+        <div class="other_users_div"><br><br>
+            {% if others %}
+            <h3>Other users' joining the trip:</h3>
+            <ul class="destination_content">
+                {% for other in others %}
+                <li>{{other.name}}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+    </body>
+</html>
