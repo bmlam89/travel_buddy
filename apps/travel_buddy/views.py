@@ -45,7 +45,7 @@ def logout(request):
 
 
 def travels(request):
-    your_trips = Trip.objects.filter(user_id=request.session["id"])
+    your_trips = User.objects.get(id=request.session['id']).shared_trips.all()
 
     #user = User.objects.get(id=request.session["id"])
     #shared_trips = user.shared_trips.all()
@@ -87,5 +87,5 @@ def join(request,id):
     trip = Trip.objects.get(id=id)
     user = User.objects.get(id=request.session["id"])
     user.shared_trips.add(trip)
-    new_trip = Trip.objects.create(destination=trip.destination,departure_date=trip.departure_date,return_date=trip.return_date,desc=trip.desc,user=User.objects.get(id=request.session["id"]))
+    #new_trip = Trip.objects.create(destination=trip.destination,departure_date=trip.departure_date,return_date=trip.return_date,desc=trip.desc,user=User.objects.get(id=request.session["id"]))
     return redirect("/travels")
